@@ -1,0 +1,163 @@
+/* Body background */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2, #ff6a88);
+    min-height: 100vh;
+    color: white;
+    padding: 30px;
+}
+
+/* Header */
+h1, h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Dashboard card container */
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+/* Dashboard cards */
+.card {
+    background: rgba(255,255,255,0.15);
+    padding: 30px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 500px;
+    min-width: 300px;
+    margin: 30px auto;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    background: rgba(255,255,255,0.25);
+}
+
+/* Forms */
+form {
+    background: rgba(255,255,255,0.12);
+    padding: 25px;
+    border-radius: 15px;
+    width: 400px;
+    margin: auto;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Inputs */
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(90deg, #0072ff, #00c6ff);
+}
+
+/* Output result box */
+pre {
+    background: rgba(0,0,0,0.5);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    white-space: pre-wrap;
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Navigation link */
+a {
+    text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    form {
+        width: 90%;
+    }
+    pre {
+        width: 95%;
+    }
+}
+
+/* Premium Output Container */
+.result-box {
+    background: rgba(255,255,255,0.15);
+    border-left: 5px solid #6a5cff;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 400px;
+    overflow-y: auto;
+    backdrop-filter: blur(12px);
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.3);
+}
+
+/* Scrollbar styling */
+.result-box::-webkit-scrollbar {
+    width: 8px;
+}
+.result-box::-webkit-scrollbar-track {
+    background: transparent;
+}
+.result-box::-webkit-scrollbar-thumb {
+    background: #6a5cff;
+    border-radius: 10px;
+}
+
+/* Result title */
+.result-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+/* Result text */
+.result-content {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #f1f1f1;
+}

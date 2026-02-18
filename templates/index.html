@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MarketMind AI</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<h1>🚀 MarketMind - GenAI Sales & Marketing</h1>
+
+<div class="card">
+<h2>Campaign Generator</h2>
+<input id="c_product" placeholder="Product">
+<input id="c_audience" placeholder="Audience">
+<input id="c_platform" placeholder="Platform">
+<button onclick="genCampaign()">Generate</button>
+<pre id="c_result"></pre>
+</div>
+
+<div class="card">
+<h2>Sales Pitch</h2>
+<input id="p_product" placeholder="Product">
+<input id="p_customer" placeholder="Customer">
+<button onclick="genPitch()">Generate</button>
+<pre id="p_result"></pre>
+</div>
+
+<div class="card">
+<h2>Lead Scoring</h2>
+<input id="l_budget" placeholder="Budget">
+<input id="l_need" placeholder="Need">
+<input id="l_urgency" placeholder="Urgency">
+<button onclick="genLead()">Score</button>
+<pre id="l_result"></pre>
+</div>
+
+<script>
+async function genCampaign() {
+    let res = await fetch("/generate_campaign", {
+        method:"POST",
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({
+            product:c_product.value,
+            audience:c_audience.value,
+            platform:c_platform.value
+        })
+    })
+    let data = await res.json()
+    c_result.innerText = data.result
+}
+
+async function genPitch() {
+    let res = await fetch("/generate_pitch", {
+        method:"POST",
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({
+            product:p_product.value,
+            customer:p_customer.value
+        })
+    })
+    let data = await res.json()
+    p_result.innerText = data.result
+}
+
+async function genLead() {
+    let res = await fetch("/score", {
+        method:"POST",
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({
+            budget:l_budget.value,
+            need:l_need.value,
+            urgency:l_urgency.value
+        })
+    })
+    let data = await res.json()
+    l_result.innerText = data.result
+}
+
+
+</script>
+</body>
+</html>
